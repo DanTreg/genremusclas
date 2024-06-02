@@ -1,3 +1,4 @@
 gtzan-dataset-music-genre-classification.zip
 gtzan_genres
 logs
+genre_classification_model.h5
