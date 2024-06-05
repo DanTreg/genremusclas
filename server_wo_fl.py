@@ -12,9 +12,6 @@ import io
 import soundfile as sf
 import numpy as np
 
-# Ensure the upload folder exists
-# if not os.path.exists(UPLOAD_FOLDER):
-#     os.makedirs(UPLOAD_FOLDER)
 class ModelInitializer():
     def __init__(self) -> None:
         self.model = ResNet50Custom(10, (32,1290,1))
@@ -62,23 +59,6 @@ class SimpleHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
                 self.wfile.write(label)
-                # if file_item.filename:
-                #     # Set the file path
-                #     file_path = os.path.join(UPLOAD_FOLDER, file_item.filename)
-
-                #     # Save the file
-                #     with open(file_path, 'wb') as output_file:
-                #         output_file.write(file_item.file.read())
-
-                #     # Send response back to the client
-                #     self.send_response(200)
-                #     self.send_header('Content-type', 'text/html')
-                #     self.send_header('Access-Control-Allow-Origin', '*')
-                #     self.end_headers()
-                #     self.wfile.write(b'File uploaded successfully')
-                #     return
-                # else:
-                #     print("File item has no filename")
             else:
                 print("No file part in form")
         else:
